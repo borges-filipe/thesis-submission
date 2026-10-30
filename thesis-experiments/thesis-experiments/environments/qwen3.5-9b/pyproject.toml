@@ -1,0 +1,30 @@
+[project]
+name = "qween3-vl-8b"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.10.*"
+dependencies = [
+    "transformers",
+    "einops",
+    "SentencePiece",
+    "torch==2.5.1",
+    "torchvision==0.20.1",
+    "torchaudio==2.5.1",
+    "accelerate",
+    "peft",
+    "gradio",
+    "Pillow",
+    "flash-attn",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }
+torchvision = { index = "pytorch-cu121" }
+torchaudio = { index = "pytorch-cu121" }
+flash-attn = { url = "https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.5cxx11abiFALSE-cp310-cp310-linux_x86_64.whl" }
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
